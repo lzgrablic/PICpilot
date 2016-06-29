@@ -911,6 +911,10 @@ void readDatalink(void){
             case SET_KIVALUES:
                 setKValues(GAIN_KI,(float*)(&cmd->data));
                 break;
+            case SET_WINGTILT:
+                //There is no function to do this yet, because we don't have a rotation mechanism yet
+                //TODO: Add a function to adjust wing tilt
+                break;
             default:
                 break;
         }
