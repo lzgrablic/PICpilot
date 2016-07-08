@@ -34,6 +34,7 @@
         <itemPath>OutputCompare.h</itemPath>
         <itemPath>InputCapture.h</itemPath>
         <itemPath>PWM.h</itemPath>
+        <itemPath>PWMInterface.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f5" displayName="Utilities" projectFiles="true">
         <itemPath>delay.h</itemPath>
@@ -93,6 +94,7 @@
         <itemPath>InputCapture.c</itemPath>
         <itemPath>OutputCompare.c</itemPath>
         <itemPath>PWM.c</itemPath>
+        <itemPath>PWMInterface.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f5" displayName="Utilities" projectFiles="true">
         <itemPath>fmath.c</itemPath>
@@ -121,6 +123,8 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../PathManager</Elem>
+    <Elem>../../../../../Desktop</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -140,8 +144,11 @@
           <linkerLibItems>
           </linkerLibItems>
         </linkerTool>
+        <archiverTool>
+        </archiverTool>
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
       </compileType>
@@ -193,8 +200,9 @@
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
       </C30>
-      <C30-AS>
-      </C30-AS>
+      <C30-AR>
+        <property key="additional-options-chop-files" value="false"/>
+      </C30-AR>
       <C30-LD>
         <property key="additional-options-use-response-files" value="false"/>
         <property key="boot-eeprom" value="no_eeprom"/>
