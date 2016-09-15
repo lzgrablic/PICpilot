@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 #include "main.h"
-#include "../Common/I2C.h"
+#include "../Path Manager/I2C.h"
 #include "../Common/debug.h"
 
 #define NUM_PWM_CHANNELS 16
