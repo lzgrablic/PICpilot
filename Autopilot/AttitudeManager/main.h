@@ -27,6 +27,9 @@
 #define PATH_MANAGER 0
 #define ATTITUDE_MANAGER !PATH_MANAGER
 
+//LED control bit
+#define LED (PORTGbits.RG15)
+
 //Define this for competition, includes higher restrictions for safety
 #define COMP_MODE 0
 

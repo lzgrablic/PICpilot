@@ -7,6 +7,7 @@
 #include "main.h"
 #include "ProgramStatus.h"
 #include "../Common/debug.h"
+#include "../Common/LED.h"
 
 char sensorState[NUM_SENSORS];
 int programState;
@@ -50,6 +51,27 @@ char getSensorStatus(char sensor){
 
 void setProgramStatus(int status){
     programState = status;
+
+    switch (status){
+        case INITIALIZATION:
+            ledOff(LED);
+            ledBurst(LED, 2);
+            break;
+        case UNARMED:
+            ledOff(LED);
+            ledBurst(LED, 3);
+            break;
+        case ARMING:
+            ledOff(LED);
+            ledBurst(LED, 4);
+            break;
+        case MAIN_EXECUTION:
+            ledOn(LED);
+            break;
+        default:
+            // do nothing
+            break;
+    }
 
 #if DEBUG
     if (status == INITIALIZATION)

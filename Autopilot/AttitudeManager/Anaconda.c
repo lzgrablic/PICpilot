@@ -10,6 +10,7 @@
 #include "delay.h"
 #include "Anaconda.h"
 #include "ProgramStatus.h"
+#include "../Common/LED.h"
 
 #if ANACONDA_VEHICLE
 
@@ -23,6 +24,7 @@ void initialization(int* outputSignal){
 //    sprintf(str,"AM:%d, PM:%d",sizeof(AMData), sizeof(PMData));
 //    debug(str);
     while (!vehicleArmed){
+        ledFlash(LED);
         imuCommunication();
         checkDMA();
         asm("CLRWDT");
@@ -60,6 +62,7 @@ void dearmVehicle(){
     setProgramStatus(UNARMED);
     p_priority numPacket = PRIORITY1;
     while (!vehicleArmed){
+        ledFlash(LED);
         imuCommunication();
         asm("CLRWDT");
         writeDatalink(numPacket%3); //TODO: Change this for multiple packets
